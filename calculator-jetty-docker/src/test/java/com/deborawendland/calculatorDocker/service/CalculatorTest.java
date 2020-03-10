@@ -2,7 +2,6 @@ package com.deborawendland.calculatorDocker.service;
 
 import com.deborawendland.calculatorDocker.annotation.AppConfig;
 import com.deborawendland.calculatorDocker.operation.*;
-import com.deborawendland.cloud.tema06.operation.*;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;

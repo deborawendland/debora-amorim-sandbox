@@ -1,7 +1,6 @@
 package com.deborawendland.calculatorDocker.annotation;
 
 import com.deborawendland.calculatorDocker.operation.*;
-import com.deborawendland.cloud.tema06.operation.*;
 import com.deborawendland.calculatorDocker.service.Calculator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;

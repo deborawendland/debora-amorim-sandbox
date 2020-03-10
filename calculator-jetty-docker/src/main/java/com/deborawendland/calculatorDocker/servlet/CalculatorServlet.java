@@ -3,7 +3,6 @@ package com.deborawendland.calculatorDocker.servlet;
 import com.deborawendland.calculatorDocker.annotation.AppConfig;
 import com.deborawendland.calculatorDocker.operation.*;
 import com.deborawendland.calculatorDocker.service.Calculator;
-import com.deborawendland.cloud.tema06.operation.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
