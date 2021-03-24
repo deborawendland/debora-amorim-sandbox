@@ -1,0 +1,37 @@
+{
+  "builders":[
+    {
+      "type": "docker",
+      "image": "golang:latest",
+      "commit": true,
+      "changes": [
+        "EXPOSE 8080",
+        "ENTRYPOINT go run calculator-app/calculator.go calculator-app/operations.go"
+      ]
+    }
+  ],
+  "provisioners":[
+    {
+      "type": "file",
+      "source": "calculator-app",
+      "destination": "/go/calculator-app"
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "cd calculator-app",
+        "go get -d -v ./..."
+      ]
+    }
+  ],
+  "post-processors": [
+    [
+      {
+        "type": "docker-tag",
+        "repository": "deborawendland/calculator-app",
+        "tag": "latest"
+      },
+      "docker-push"
+    ]
+  ]
+}

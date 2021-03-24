@@ -1,0 +1,10 @@
+pipeline {
+    agent any
+    stages {
+        stage('Launch') {
+            steps {
+                sh "docker run -p 8090:8090 -d deborawendland/calculator-app:latest"
+            }
+        }
+    }
+}

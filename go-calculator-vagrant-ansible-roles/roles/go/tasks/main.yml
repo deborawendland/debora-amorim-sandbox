@@ -1,0 +1,15 @@
+---
+- name: Install Golang
+  become: true
+  shell: add-apt-repository ppa:longsleep/golang-backports -y && apt update && apt install golang-go -y
+
+- name: Get Dependencies
+  become: true
+  shell:
+    cmd: go get -d -v ./...
+    chdir: /home/vagrant/calculator-app/
+
+- name: Run Microservice
+  shell:
+    cmd: go run calculator.go operations.go
+    chdir: /home/vagrant/calculator-app/

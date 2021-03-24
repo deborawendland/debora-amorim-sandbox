@@ -1,0 +1,13 @@
+pipeline {
+    agent any
+    stages {
+        stage('Bake') {
+            steps {
+                git branch: 'devops-12',
+                    credentialsId: 'Git',
+                    url: 'https://github.com/deborawendland/jovens-talentos/'
+                sh "cd 3-devops/debora-amorim/tema-12 && packer build packer-docker.json"
+            }
+        }
+    }
+}

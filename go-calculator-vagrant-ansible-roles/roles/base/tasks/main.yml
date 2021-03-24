@@ -1,0 +1,21 @@
+---
+- name: Updating Apt Packages
+  apt:
+    update_cache: yes
+
+- name: Upgrading Apt Packages
+  apt:
+    upgrade: dist
+    force_apt_get: yes
+
+- name: Create Status Script
+  copy:
+    dest: "/vagrant/status.sh"
+    content: |
+      #!/bin/bash
+      if pidof calculator
+      then
+          echo RUNNING
+      else
+          echo NOT RUNNING
+      fi

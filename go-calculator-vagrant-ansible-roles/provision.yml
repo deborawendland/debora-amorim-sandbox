@@ -1,0 +1,8 @@
+---
+- name: Setting Up Environment
+  hosts: all
+  user: root
+  become: yes
+  roles:
+    - base
+    - go
